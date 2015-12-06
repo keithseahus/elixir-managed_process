@@ -3,8 +3,8 @@ defmodule ManagedProcess.Mixfile do
 
   def project do
     [ app: :managed_process,
-      version: "0.1.0",
-      elixir: "~> 0.12.2",
+      version: "0.1.1",
+      elixir: "~> 1.1.1",
       deps: deps ]
   end
 
@@ -16,6 +16,6 @@ defmodule ManagedProcess.Mixfile do
   # Returns the list of dependencies in the format:
   # { :foobar, "0.1", git: "https://github.com/elixir-lang/foobar.git" }
   defp deps do
-    [ { :finalizer, github: "meh/elixir-finalizer" } ]
+    [ { :finalizer, github: "keithseahus/elixir-finalizer" } ]
   end
 end
