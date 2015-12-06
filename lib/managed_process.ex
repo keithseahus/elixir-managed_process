@@ -12,9 +12,11 @@ defmodule Process.Managed do
   processs when it's not referenced by anything.
   """
 
-  @opaque t :: record
+  require Record
 
-  defrecordp :process, __MODULE__, pid: nil, reference: nil
+  @opaque t :: Record.record
+
+  Record.defrecordp :process, __MODULE__, pid: nil, reference: nil
 
   @doc """
   Returns the managed pid of a new process started by the application of `fun`.
@@ -255,7 +257,7 @@ defmodule Process.Managed do
     pid
   end
 
-  def send(pid, msg) when pid |> is_record Process.Managed do
+  def send(pid, msg) when pid |> Record.is_record Process.Managed do
     Kernel.send(pid.to_pid, msg)
   end
 
